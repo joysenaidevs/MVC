@@ -13,6 +13,8 @@ namespace MVC
             ProdutoController produtoController = new ProdutoController();
             produtoController.MostrarProdutos();
 
+            produtoController.Cadastrar();
+
         }
     }
 }

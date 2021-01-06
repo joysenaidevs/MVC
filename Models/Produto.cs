@@ -54,6 +54,21 @@ namespace MVC.Models
 
                 return produtos;
             }
+
+            public void Inserir(Produto p)
+            {
+                //Preparar um array de string para o método AppendAllLines
+                string[] linhas = { PrepararLinhaCSV(p) };
+
+                //Inserir um array de linhas no arquivo CSV
+                File.AppendAllLines(PATH, linhas);
+            }
+
+            public string PrepararLinhaCSV(Produto prod)
+            {
+                //Preparar a linha para o formato CSV
+                return $"{prod.Codigo};{prod.Nome};{prod.Preco}";
+            }
         
         
     }
